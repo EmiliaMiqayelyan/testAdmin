@@ -3,15 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Home from "./Home";
-import Login from "./Login";
-import Panel from "./Panel";
-
-export {Home, Login,Panel}
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

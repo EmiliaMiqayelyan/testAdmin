@@ -2,10 +2,11 @@ import { Button, Card, Form } from "react-bootstrap"
 import hook from "./hook";
 import "./style.css";
 export default () => {
-    const {register, handleSubmit,submit} = hook()
+    const {register, handleSubmit,submit,errorMessage} = hook()
     return <div className ="login"> <Card style={{ width: '18rem' }}>
         <Card.Body>
             <Card.Title>Log in</Card.Title>
+            {errorMessage?<p style={{color:"red"}}>{errorMessage}</p>:null}
             <Form onSubmit={handleSubmit(submit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -15,7 +16,6 @@ export default () => {
                     })}
                     />
                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
