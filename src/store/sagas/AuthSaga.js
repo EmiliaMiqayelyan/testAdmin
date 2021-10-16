@@ -32,6 +32,6 @@ function* getMy(){
 function* watchAuthSaga(){
     yield takeLatest(AuthTypes.LOGIN,login)
     yield takeLatest(AuthTypes.GET_MY,getMy)
-}
+};
 
-export {watchAuthSaga}
+export {watchAuthSaga};

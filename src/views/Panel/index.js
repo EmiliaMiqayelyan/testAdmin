@@ -1,9 +1,9 @@
-import { useEffect } from "react"
-import { Col, Container, Nav, Row } from "react-bootstrap"
-import { useSelector } from "react-redux"
-import { Route, Switch, useRouteMatch } from "react-router"
-import { Link } from "react-router-dom"
-import { Doctors } from ".."
+import { useEffect } from "react";
+import { Col, Container, Nav, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Route, Switch, useRouteMatch } from "react-router";
+import { Link } from "react-router-dom";
+import { Doctors } from "..";
 import { userSelector } from "../../store/selectors/authSelector"
 import "./style.css";
 

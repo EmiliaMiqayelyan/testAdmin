@@ -19,6 +19,7 @@ export default function DoctorList(){
         const responce = await axios.get("users/get-doctors/?with_slots=False")
     setUser(responce.data);
   };
+
   return (
     <Table striped bordered hover variant="dark">
     <thead>
@@ -36,5 +37,4 @@ export default function DoctorList(){
           </tr>
           </tbody>
 </Table>
-
-   ) };
+) };

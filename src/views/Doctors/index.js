@@ -1,6 +1,6 @@
 import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import hook from "./hook"
+import hook from "./hook";
 
 export default ()=>{
     const {doctors,match} = hook();
@@ -27,4 +27,4 @@ export default ()=>{
   </tbody>
 </Table>
     </div>
-}
+};

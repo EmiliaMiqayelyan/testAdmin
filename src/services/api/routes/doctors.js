@@ -11,4 +11,4 @@ export const getDoctorsRequest = async ()=>{
         throw error
     }
     
-}
+};

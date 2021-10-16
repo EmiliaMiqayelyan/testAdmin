@@ -5,4 +5,4 @@ import doctors from "./doctorsReducer";
 export default combineReducers({
     auth,
     doctors
-})
+});

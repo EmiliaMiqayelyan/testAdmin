@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useRouteMatch } from "react-router";
 import { getDoctorsAction } from "../../store/actions/doctorsActions";
-import { doctorsSelector } from "../../store/selectors"
+import { doctorsSelector } from "../../store/selectors";
 import "./style.css";
 
 export default ()=>{
@@ -17,4 +17,4 @@ export default ()=>{
     },[doctors])
 
     return {doctors,match}
-}
+};

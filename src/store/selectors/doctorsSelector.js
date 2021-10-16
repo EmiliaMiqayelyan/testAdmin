@@ -1,1 +1,1 @@
-export const doctorsSelector = state=>state.doctors
+export const doctorsSelector = state=>state.doctors;

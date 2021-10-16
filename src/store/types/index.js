@@ -4,4 +4,4 @@ import * as DoctorsTypes from "./DoctorsTypes";
 export {
     AuthTypes,
     DoctorsTypes
-}
+};

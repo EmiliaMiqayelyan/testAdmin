@@ -14,7 +14,7 @@ export const loginRequest = async (username,password)=>{
         throw error
     }
     
-}
+};
 
 export const getMyRequest = async ()=>{
     try {
@@ -27,4 +27,4 @@ export const getMyRequest = async ()=>{
         throw error
     }
     
-}
+};

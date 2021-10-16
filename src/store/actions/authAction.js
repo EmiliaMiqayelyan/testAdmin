@@ -18,17 +18,17 @@ export const getMyAction = ()=>{
     return {
         type:AuthTypes.GET_MY
     }
-}
+};
 export const setMyAction = (payload)=>{
     return {
         type:AuthTypes.SET_MY,
         payload
     }
-}
+};
 
 export const setErrorMessageAction = (payload)=>{
     return {
         type:AuthTypes.SET_ERROR_MESSAGE,
         payload
     }
-}
+};

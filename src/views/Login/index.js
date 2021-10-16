@@ -1,6 +1,7 @@
-import { Button, Card, Form } from "react-bootstrap"
+import { Button, Card, Form } from "react-bootstrap";
 import hook from "./hook";
 import "./style.css";
+
 export default () => {
     const {register, handleSubmit,submit,errorMessage} = hook()
     return <div className ="login"> <Card style={{ width: '18rem' }}>

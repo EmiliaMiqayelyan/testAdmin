@@ -1,11 +1,11 @@
-import { useEffect } from "react"
-import { useForm } from "react-hook-form"
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import api from "../../services/api"
-import { loginAction } from "../../store/actions"
-import { isAuthSelector } from "../../store/selectors"
-import { errorMessageSelector } from "../../store/selectors/authSelector"
+import { loginAction } from "../../store/actions";
+import { isAuthSelector } from "../../store/selectors";
+import { errorMessageSelector } from "../../store/selectors/authSelector";
 
 export default ()=>{
     const {register,handleSubmit} = useForm()
@@ -23,4 +23,4 @@ export default ()=>{
     }
  
     return {register,handleSubmit,submit,errorMessage}
-}
+};

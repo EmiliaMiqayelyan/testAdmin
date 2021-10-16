@@ -15,4 +15,4 @@ function* watchDoctorsSaga(){
     yield takeLatest(DoctorsTypes.GET_DOCTORS,getDoctors)
 }
 
-export {watchDoctorsSaga}
+export {watchDoctorsSaga};

@@ -1,3 +1,4 @@
+
 export const LOGIN = "@AuthTypes/LOGIN";
 export const LOGIN_SUCCESS = "@AuthTypes/LOGIN_SUCCESS";
 export const GET_MY = "@AuthTypes/GET_MY";
