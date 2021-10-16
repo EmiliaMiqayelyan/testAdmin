@@ -3,7 +3,7 @@ import { Col, Container, Nav, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Route, Switch, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
-import { Doctors } from "..";
+import { DoctorList, Doctors } from "..";
 import { userSelector } from "../../store/selectors/authSelector"
 import "./style.css";
 
@@ -27,7 +27,7 @@ export default () => {
                 <Col>
                     <Switch>
                         <Route path={`${match.url}/doctors/:id`}>
-                            <div>Doctor Details</div>
+                            <DoctorList></DoctorList>
                         </Route>
                         <Route path={`${match.url}/doctors`}>
                             <Doctors></Doctors>
