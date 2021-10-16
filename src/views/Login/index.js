@@ -34,4 +34,4 @@ export default () => {
         </Card.Body>
     </Card>
     </div>
-}
+};
