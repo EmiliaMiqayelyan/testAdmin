@@ -3,7 +3,7 @@ import { Col, Container, Nav, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Route, Switch, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
-import { DoctorList, Doctors } from "..";
+import { Doctors } from "..";
 import { userSelector } from "../../store/selectors/authSelector"
 import "./style.css";
 import * as React from "react";
@@ -106,7 +106,6 @@ export default () => {
                 width: "20ch"
             }
         }
-<<<<<<< HEAD
     }));
     const DrawerHeader = styled("div")(({ theme }) => ({
         display: "flex",
@@ -149,7 +148,7 @@ export default () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" noWrap component="div">
-                            AlloDoc
+                            Allo
                         </Typography>
                         <Search>
                             <SearchIconWrapper>
@@ -213,29 +212,4 @@ export default () => {
             </Box>
         </div>
     }
-=======
-    }, [])
-    return <div className="wrapper">
-        <Container>
-            <Row>
-                <Col xs={3} >
-                    <Nav defaultActiveKey="/home" className="flex-column">
-                        <Link to={`${match.url}/doctors`} className="doctorsLink">Doctors</Link>
-                    </Nav>
-                </Col>
-                <Col>
-                    <Switch>
-                        <Route path={`${match.url}/doctors/:id`}>
-                            <DoctorList></DoctorList>
-                        </Route>
-                        <Route path={`${match.url}/doctors`}>
-                            <Doctors></Doctors>
-                        </Route>
-                    </Switch>
-                </Col>
-            </Row>
-
-        </Container>
-    </div>
->>>>>>> 5e3231c0eaaac64929833544472754a98d95f7e3
 }
