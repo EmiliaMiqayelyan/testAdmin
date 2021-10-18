@@ -4,9 +4,9 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 
 
-export default function DoctorList(){
+export default function DoctorList() {
   const [user, setUser] = useState({
-    id:"",
+    id: "",
     firstName: "",
     lastnName: ""
   });
@@ -16,25 +16,26 @@ export default function DoctorList(){
     loadUser();
   }, []);
   const loadUser = async () => {
-        const responce = await axios.get("users/get-doctors/?with_slots=False")
+    const responce = await axios.get("users/get-doctors/?with_slots=False")
     setUser(responce.data);
   };
 
   return (
     <Table striped bordered hover variant="dark">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-      </tr>
-    </thead>
-    <tbody>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>{doctor.id}</td>
           <td>{doctor.firstName}</td>
           <td>{doctor.lastName}</td>
-          </tr>
-          </tbody>
-</Table>
-) };
+        </tr>
+      </tbody>
+    </Table>
+  )
+};

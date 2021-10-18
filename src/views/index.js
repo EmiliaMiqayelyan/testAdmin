@@ -4,4 +4,4 @@ import Panel from "./Panel";
 import PrivatePage from "./Private";
 import Doctors from "./Doctors";
 
-export {Home, Login,Panel,PrivatePage,Doctors};
+export { Home, Login, Panel, PrivatePage, Doctors };

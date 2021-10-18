@@ -5,16 +5,16 @@ import { getDoctorsAction } from "../../store/actions/doctorsActions";
 import { doctorsSelector } from "../../store/selectors";
 import "./style.css";
 
-export default ()=>{
-    const {doctors} = useSelector(doctorsSelector);
+export default () => {
+    const { doctors } = useSelector(doctorsSelector);
     const match = useRouteMatch()
     const dispatch = useDispatch();
-    useEffect(()=>{
-        if(!doctors){
-            console.log("",getDoctorsAction());
+    useEffect(() => {
+        if (!doctors) {
+            console.log("", getDoctorsAction());
             dispatch(getDoctorsAction());
         }
-    },[doctors])
+    }, [doctors])
 
-    return {doctors,match}
+    return { doctors, match }
 };

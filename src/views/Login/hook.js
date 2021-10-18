@@ -7,20 +7,20 @@ import { loginAction } from "../../store/actions";
 import { isAuthSelector } from "../../store/selectors";
 import { errorMessageSelector } from "../../store/selectors/authSelector";
 
-export default ()=>{
-    const {register,handleSubmit} = useForm()
-    const dispatch  = useDispatch();
+export default () => {
+    const { register, handleSubmit } = useForm()
+    const dispatch = useDispatch();
     const isAuth = useSelector(isAuthSelector);
     const history = useHistory();
     const errorMessage = useSelector(errorMessageSelector);
-    useEffect(()=>{
-        if(isAuth){
+    useEffect(() => {
+        if (isAuth) {
             history.push("/panel");
         }
-    },[isAuth])
-    const submit = (data)=>{
+    }, [isAuth])
+    const submit = (data) => {
         dispatch(loginAction(data))
     }
- 
-    return {register,handleSubmit,submit,errorMessage}
+
+    return { register, handleSubmit, submit, errorMessage }
 };

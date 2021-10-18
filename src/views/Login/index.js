@@ -3,18 +3,18 @@ import hook from "./hook";
 import "./style.css";
 
 export default () => {
-    const {register, handleSubmit,submit,errorMessage} = hook()
-    return <div className ="login"> <Card style={{ width: '18rem' }}>
+    const { register, handleSubmit, submit, errorMessage } = hook()
+    return <div className="login"> <Card style={{ width: '18rem' }}>
         <Card.Body>
             <Card.Title>Log in</Card.Title>
-            {errorMessage?<p style={{color:"red"}}>{errorMessage}</p>:null}
+            {errorMessage ? <p style={{ color: "red" }}>{errorMessage}</p> : null}
             <Form onSubmit={handleSubmit(submit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control  placeholder="Enter User name"
-                    {...register("username",{
-                        required:true
-                    })}
+                    <Form.Control placeholder="Enter User name"
+                        {...register("username", {
+                            required: true
+                        })}
                     />
                     <Form.Text className="text-muted">
                     </Form.Text>
@@ -22,9 +22,9 @@ export default () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password"
-                    {...register("password",{
-                        required:true
-                    })}
+                        {...register("password", {
+                            required: true
+                        })}
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">

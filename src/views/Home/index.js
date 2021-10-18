@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 
-export default ()=>{
+export default () => {
     return <div>
-        <Link to = '/login' className="homeLogin">Welcome !</Link>
+        <Link to='/login' className="homeLogin">Welcome !</Link>
     </div>
 };
