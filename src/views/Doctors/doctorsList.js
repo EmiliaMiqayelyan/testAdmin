@@ -31,9 +31,9 @@ export default function DoctorList(){
     </thead>
     <tbody>
         <tr>
-          <td>{doctor.id}</td>
-          <td>{doctor.firstName}</td>
-          <td>{doctor.lastName}</td>
+          <td>{user.id}</td>
+          <td>{user.firstName}</td>
+          <td>{user.lastName}</td>
           </tr>
           </tbody>
 </Table>
