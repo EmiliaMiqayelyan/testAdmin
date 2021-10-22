@@ -148,64 +148,64 @@ export default () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                Allo  Doc
-            </Typography>
-            <Search>
-                <SearchIconWrapper>
-                    <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                    placeholder="Search…"
-                    inputProps={{ "aria-label": "search" }}
-                />
-            </Search>
-        </Toolbar>
+                        Allo  Doc
+                    </Typography>
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ "aria-label": "search" }}
+                        />
+                    </Search>
+                </Toolbar>
             </AppBar >
-        <Drawer
-            sx={{
-                width: drawerWidth,
-                flexShrink: 0,
-                "& .MuiDrawer-paper": {
+            <Drawer
+                sx={{
                     width: drawerWidth,
-                    boxSizing: "border-box"
-                }
-            }}
-            variant="persistent"
-            anchor="left"
-            open={open}
-        >
-            <DrawerHeader>
-                <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === "ltr" ? (
-                        <ChevronLeftIcon />
-                    ) : (
-                        <ChevronRightIcon />
-                    )}
-                </IconButton>
-            </DrawerHeader>
-            <Divider />
-            <List>
-                <ListItem button key={"Doctors"}>
-                    <ListItemIcon>
-    <PersonIcon>
-        Ծ
-    </PersonIcon>
+                    flexShrink: 0,
+                    "& .MuiDrawer-paper": {
+                        width: drawerWidth,
+                        boxSizing: "border-box"
+                    }
+                }}
+                variant="persistent"
+                anchor="left"
+                open={open}
+            >
+                <DrawerHeader>
+                    <IconButton onClick={handleDrawerClose}>
+                        {theme.direction === "ltr" ? (
+                            <ChevronLeftIcon />
+                        ) : (
+                            <ChevronRightIcon />
+                        )}
+                    </IconButton>
+                </DrawerHeader>
+                <Divider />
+                <List>
+                    <ListItem button key={"Doctors"}>
+                        <ListItemIcon>
+                            <PersonIcon>
+                                Ծ
+                            </PersonIcon>
                         </ListItemIcon >
-        <ListItemText primary={"Doctors"}
-            onClick={() => {
-                history.push(`/panel/doctors`)
-            }} />
+                        <ListItemText primary={"Doctors"}
+                            onClick={() => {
+                                history.push(`/panel/doctors`)
+                            }} />
                     </ListItem >
-        <ListItem button key={"Clients"} onClick={() => {
-            history.push(`/panel/clients`)
-        }}>
-            <ListItemIcon>
-                <PersonIcon></PersonIcon>
-            </ListItemIcon>
-            <ListItemText primary={"Clients"} />
-        </ListItem>
+                    <ListItem button key={"Clients"} onClick={() => {
+                        history.push(`/panel/clients`)
+                    }}>
+                        <ListItemIcon>
+                            <PersonIcon></PersonIcon>
+                        </ListItemIcon>
+                        <ListItemText primary={"Clients"} />
+                    </ListItem>
                 </List >
-        <Divider />
+                <Divider />
             </Drawer >
         </Box >
     </div >
