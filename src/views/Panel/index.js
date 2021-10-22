@@ -24,14 +24,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-<<<<<<< HEAD
 import CallIcon from '@mui/icons-material/Call';
 import PersonIcon from '@mui/icons-material/Person';
-
-=======
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
->>>>>>> 9b78f89604fd1270035e68f11421452de0d35efd
 
 export default () => {
     const user = useSelector(userSelector)
@@ -153,111 +147,66 @@ export default () => {
                     >
                         <MenuIcon />
                     </IconButton>
-<<<<<<< HEAD
-                    <CallIcon></CallIcon>
                     <Typography variant="h6" noWrap component="div">
-                        Allo DOC
-=======
-                    <Typography variant="h6" noWrap component="div">
-                        AlloDoc
->>>>>>> 9b78f89604fd1270035e68f11421452de0d35efd
-                    </Typography>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ "aria-label": "search" }}
-                        />
-                    </Search>
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                sx={{
+                Allo  Doc
+            </Typography>
+            <Search>
+                <SearchIconWrapper>
+                    <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                    placeholder="Search…"
+                    inputProps={{ "aria-label": "search" }}
+                />
+            </Search>
+        </Toolbar>
+            </AppBar >
+        <Drawer
+            sx={{
+                width: drawerWidth,
+                flexShrink: 0,
+                "& .MuiDrawer-paper": {
                     width: drawerWidth,
-                    flexShrink: 0,
-                    "& .MuiDrawer-paper": {
-                        width: drawerWidth,
-                        boxSizing: "border-box"
-                    }
-                }}
-                variant="persistent"
-                anchor="left"
-                open={open}
-            >
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === "ltr" ? (
-                            <ChevronLeftIcon />
-                        ) : (
-                            <ChevronRightIcon />
-                        )}
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                <List>
-                    <ListItem button key={"Doctors"}>
-                        <ListItemIcon>
-<<<<<<< HEAD
-                            <PersonIcon></PersonIcon>
-                        </ListItemIcon>
-                        <ListItemText primary={"Doctors"}
-                            onClick={() => {
-                                history.push(`/panel/doctors`)
-                            }} />
-                    </ListItem>
-                    <ListItem button key={"Clients"} onClick={() => {
-                        history.push(`/panel/clients`)
-                    }}>
-                        <ListItemIcon>
-                            <PersonIcon></PersonIcon>
-                        </ListItemIcon>
-                        <ListItemText primary={"Clients"} />
-                    </ListItem>
-                </List>
-                <Divider />
-            </Drawer>
-        </Box>
+                    boxSizing: "border-box"
+                }
+            }}
+            variant="persistent"
+            anchor="left"
+            open={open}
+        >
+            <DrawerHeader>
+                <IconButton onClick={handleDrawerClose}>
+                    {theme.direction === "ltr" ? (
+                        <ChevronLeftIcon />
+                    ) : (
+                        <ChevronRightIcon />
+                    )}
+                </IconButton>
+            </DrawerHeader>
+            <Divider />
+            <List>
+                <ListItem button key={"Doctors"}>
+                    <ListItemIcon>
+    <PersonIcon>
+        Ծ
+    </PersonIcon>
+                        </ListItemIcon >
+        <ListItemText primary={"Doctors"}
+            onClick={() => {
+                history.push(`/panel/doctors`)
+            }} />
+                    </ListItem >
+        <ListItem button key={"Clients"} onClick={() => {
+            history.push(`/panel/clients`)
+        }}>
+            <ListItemIcon>
+                <PersonIcon></PersonIcon>
+            </ListItemIcon>
+            <ListItemText primary={"Clients"} />
+        </ListItem>
+                </List >
+        <Divider />
+            </Drawer >
+        </Box >
     </div >
-
-=======
-                            <InboxIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={"Doctors"}
-                        onClick={()=>{
-                            console.log("hello");
-                            history.push(`/panel/doctors`)
-                        }} />
-                    </ListItem>
-                    <ListItem button key={"Clients"} onClick={()=>{
-                        console.log("hello");
-                        history.push(`/panel/clients`)
-                    }}>
-                        <ListItemIcon>
-                            <InboxIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={"Clients"} />
-                    </ListItem>
-
-                </List>
-                <Divider />
-                <List>
-                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <Main open={open}>
-                <DrawerHeader />
-            </Main>
-        </Box>
-    </div>
-
->>>>>>> 9b78f89604fd1270035e68f11421452de0d35efd
 }

@@ -24,7 +24,6 @@ export default () => {
     <Table striped bordered hover variant="dark">
       <thead>
         <tr>
-<<<<<<< HEAD:src/views/DoctorList/doctorList.js
           <th>#</th>
           <th>First Name</th>
           <th>Last Name</th>
@@ -40,13 +39,3 @@ export default () => {
     </Table>
   )
 };
-=======
-          <td>{user.id}</td>
-          <td>{user.firstName}</td>
-          <td>{user.lastName}</td>
-          </tr>
-          </tbody>
-</Table>
-) };
-
->>>>>>> 9b78f89604fd1270035e68f11421452de0d35efd:src/views/Doctors/doctorsList.js
