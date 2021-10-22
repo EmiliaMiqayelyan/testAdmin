@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { Route, Switch, useRouteMatch } from "react-router";
+import { Route, Switch, useHistory, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
-import { Doctors } from "..";
 import { userSelector } from "../../store/selectors/authSelector"
 import "./style.css";
 import * as React from "react";
@@ -25,12 +24,14 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";clear
-import MailIcon from "@mui/icons-material/Mail";
+import CallIcon from '@mui/icons-material/Call';
+import PersonIcon from '@mui/icons-material/Person';
+
 
 export default () => {
     const user = useSelector(userSelector)
     const match = useRouteMatch()
+    const history = useHistory()
     const drawerWidth = 240;
 
     const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -125,91 +126,88 @@ export default () => {
 
     const handleDrawerClose = () => {
         setOpen(false);
-
-
-        useEffect(() => {
-            const access = localStorage.getItem("access")
-            if (!access) {
-                window.location = "/login"
-            }
-        }, [])
-        return <div className="wrapper">
-            <Box sx={{ display: "flex" }}>
-                <CssBaseline />
-                <AppBar position="fixed" open={open}>
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={handleDrawerOpen}
-                            edge="start"
-                            sx={{ mr: 2, ...(open && { display: "none" }) }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap component="div">
-                            Allo
-                        </Typography>
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search…"
-                                inputProps={{ "aria-label": "search" }}
-                            />
-                        </Search>
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    sx={{
-                        width: drawerWidth,
-                        flexShrink: 0,
-                        "& .MuiDrawer-paper": {
-                            width: drawerWidth,
-                            boxSizing: "border-box"
-                        }
-                    }}
-                    variant="persistent"
-                    anchor="left"
-                    open={open}
-                >
-                    <DrawerHeader>
-                        <IconButton onClick={handleDrawerClose}>
-                            {theme.direction === "ltr" ? (
-                                <ChevronLeftIcon />
-                            ) : (
-                                <ChevronRightIcon />
-                            )}
-                        </IconButton>
-                    </DrawerHeader>
-                    <Divider />
-                    <List>
-                        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
-                    </List>
-                    <Divider />
-                    <List>
-                        {["All mail", "Trash", "Spam"].map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))}
-                    </List>
-                </Drawer>
-                <Main open={open}>
-                    <DrawerHeader />
-                </Main>
-            </Box>
-        </div>
     }
+
+    useEffect(() => {
+        const access = localStorage.getItem("access")
+        if (!access) {
+            window.location = "/login"
+        }
+    }, [])
+    return <div className="wrapper">
+        <Box sx={{ display: "flex" }}>
+            <CssBaseline />
+            <AppBar position="fixed" open={open}>
+                <Toolbar>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerOpen}
+                        edge="start"
+                        sx={{ mr: 2, ...(open && { display: "none" }) }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <CallIcon></CallIcon>
+                    <Typography variant="h6" noWrap component="div">
+                        Allo DOC
+                    </Typography>
+                    <Search>
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ "aria-label": "search" }}
+                        />
+                    </Search>
+                </Toolbar>
+            </AppBar>
+            <Drawer
+                sx={{
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    "& .MuiDrawer-paper": {
+                        width: drawerWidth,
+                        boxSizing: "border-box"
+                    }
+                }}
+                variant="persistent"
+                anchor="left"
+                open={open}
+            >
+                <DrawerHeader>
+                    <IconButton onClick={handleDrawerClose}>
+                        {theme.direction === "ltr" ? (
+                            <ChevronLeftIcon />
+                        ) : (
+                            <ChevronRightIcon />
+                        )}
+                    </IconButton>
+                </DrawerHeader>
+                <Divider />
+                <List>
+                    <ListItem button key={"Doctors"}>
+                        <ListItemIcon>
+                            <PersonIcon></PersonIcon>
+                        </ListItemIcon>
+                        <ListItemText primary={"Doctors"}
+                            onClick={() => {
+                                history.push(`/panel/doctors`)
+                            }} />
+                    </ListItem>
+                    <ListItem button key={"Clients"} onClick={() => {
+                        history.push(`/panel/clients`)
+                    }}>
+                        <ListItemIcon>
+                            <PersonIcon></PersonIcon>
+                        </ListItemIcon>
+                        <ListItemText primary={"Clients"} />
+                    </ListItem>
+                </List>
+                <Divider />
+            </Drawer>
+        </Box>
+    </div >
+
 }

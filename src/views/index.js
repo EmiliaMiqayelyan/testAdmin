@@ -3,6 +3,6 @@ import Login from "./Login";
 import Panel from "./Panel";
 import PrivatePage from "./Private";
 import Doctors from "./Doctors";
-import DoctorList from "./Doctors/doctorsList";
+import DoctorList from "./DoctorList/doctorList";
 
-export {Home, Login,Panel,PrivatePage,Doctors,DoctorList};
+export { Home, Login, Panel, PrivatePage, Doctors, DoctorList };
