@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Table } from "react-bootstrap";
-import DoctorList from "./DoctorList";
 
 export default DoctorList =()=>{
   const [user, setUser] = useState({
