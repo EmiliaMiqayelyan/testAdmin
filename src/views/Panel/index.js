@@ -188,7 +188,6 @@ export default () => {
                     <ListItem button key={"Doctors"}>
                         <ListItemIcon>
                             <PersonIcon>
-                                Ծ
                             </PersonIcon>
                         </ListItemIcon >
                         <ListItemText primary={"Doctors"}
