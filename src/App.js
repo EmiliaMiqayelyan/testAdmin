@@ -1,14 +1,12 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Doctors, Home, Login, Panel, PrivatePage } from './views';
+import { Home, Login, Panel, PrivatePage } from './views';
+import { Doctor, Clients } from "./views/DoctorList"
 import { Provider, useDispatch } from 'react-redux';
-import { DoctorList } from './views';
-import store from './store';
 import { useEffect, useState } from 'react';
 import api from './services/api';
-import Doctor from './DoctorList/Doctor';
-import Clients from './DoctorList/Clients';
+
 
 import { getMyAction, loginSuccessAction } from './store/actions/authAction';
 function App() {
@@ -42,8 +40,12 @@ function App() {
             <Route path="/" >
               <Home />
             </Route>
-            <Route path='/doctor' component={Doctor} />
-            <Route path='/clients' component={Clients} />
+            <Route exact path='/doctor'>
+              <Doctor />
+              </Route>
+            <Route exact path='/clients'>
+              <Clients />
+            </Route>
           </Switch>
         </Router>}
     </div>
