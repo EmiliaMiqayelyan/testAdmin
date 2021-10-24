@@ -10,7 +10,7 @@ const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Clients',
+    title: 'Client',
     path: '/clients',
     icon: <PersonIcon />,
     cName: 'nav-text'
