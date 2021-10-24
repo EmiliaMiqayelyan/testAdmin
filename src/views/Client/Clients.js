@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Clients() {
+function Clients() {
   return (
     <div className='products'>
       <h1>Clients</h1>
     </div>
   );
 }
-
+export default Clients;

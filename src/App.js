@@ -1,12 +1,13 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, Login, Panel, PrivatePage } from './views';
-import { Doctor, Clients } from "./views/DoctorList"
+import {  Doctors, Home, Login, Panel, PrivatePage } from './views';
+import Doctorss from './views/Doctor/Doctorss';
+import Clients  from './views/Client/Clients';
 import { Provider, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import api from './services/api';
-
+import Navbar from "./views/Panel"
 
 import { getMyAction, loginSuccessAction } from './store/actions/authAction';
 function App() {
@@ -40,12 +41,14 @@ function App() {
             <Route path="/" >
               <Home />
             </Route>
-            <Route exact path='/doctor'>
-              <Doctor />
+            <Navbar>
+            <Route  path='/doctor'>
+              <Doctorss />
               </Route>
-            <Route exact path='/clients'>
+            <Route  path='/client'>
               <Clients />
-            </Route>
+              </Route>
+              </Navbar>
           </Switch>
         </Router>}
     </div>

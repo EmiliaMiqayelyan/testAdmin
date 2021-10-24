@@ -1,20 +1,19 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
+import PersonIcon from '@mui/icons-material/Person';
 
-export const SidebarData = [
+const SidebarData = [
   
   {
     title: 'Doctor',
     path: '/doctor',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <PersonIcon />,
     cName: 'nav-text'
   },
   {
     title: 'Clients',
     path: '/clients',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <PersonIcon />,
     cName: 'nav-text'
   },
 ];
+export default SidebarData;
