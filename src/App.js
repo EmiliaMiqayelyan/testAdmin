@@ -1,3 +1,4 @@
+
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Doctors, Home, Login, Panel, PrivatePage } from './views';
@@ -6,6 +7,9 @@ import { DoctorList } from './views';
 import store from './store';
 import { useEffect, useState } from 'react';
 import api from './services/api';
+import Doctor from './DoctorList/Doctor';
+import Clients from './DoctorList/Clients';
+
 import { getMyAction, loginSuccessAction } from './store/actions/authAction';
 function App() {
   const dispatch = useDispatch()
@@ -24,7 +28,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      {loading ? <h1>Loading</h1> :
+      {loading ? <h1>Loading...</h1> :
         <Router>
           <Switch>
             <Route exact path="/login" >
@@ -38,8 +42,8 @@ function App() {
             <Route path="/" >
               <Home />
             </Route>
-            <Route path='/doctorList' exact component={DoctorList} />
-
+            <Route path='/doctor' component={Doctor} />
+            <Route path='/clients' component={Clients} />
           </Switch>
         </Router>}
     </div>
@@ -47,3 +51,4 @@ function App() {
 };
 
 export default App;
+
