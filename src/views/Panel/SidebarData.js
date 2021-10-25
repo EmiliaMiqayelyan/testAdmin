@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 
-const SidebarData = [
+export const SidebarData = [
   
   {
     title: 'Doctor',
@@ -16,4 +16,3 @@ const SidebarData = [
     cName: 'nav-text'
   },
 ];
-export default SidebarData;
