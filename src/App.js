@@ -37,11 +37,10 @@ function App() {
                 <Panel />
               </PrivatePage>
             </Route>
-            <Route path="/" >
+            <Route exact path="/" >
               <Home />
             </Route>
-            <Route path="/doctorss" exact component={Doctorss} />
-            <Route path="/clients" exact component={Clients}/>
+            
             </Switch>
         </Router>
         }

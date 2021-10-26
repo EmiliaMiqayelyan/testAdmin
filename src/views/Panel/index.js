@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, Switch, Route} from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './style.css';
 import { IconContext } from 'react-icons';
+import { Clients, Doctorss } from '..';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -38,6 +39,10 @@ function Navbar() {
             })}
           </ul>
         </nav>
+        <Switch>
+            <Route path="/panel/doctors" exact component={Doctorss} />
+            <Route path="/panel/clients" exact component={Clients}/>
+        </Switch>
       </IconContext.Provider>
     </>
   );

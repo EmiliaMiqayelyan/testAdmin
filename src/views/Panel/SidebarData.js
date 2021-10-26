@@ -5,13 +5,13 @@ export const SidebarData = [
   
   {
     title: 'Doctor',
-    path: '/doctor',
+    path: '/panel/doctors',
     icon: <PersonIcon />,
     cName: 'nav-text'
   },
   {
     title: 'Client',
-    path: '/clients',
+    path: '/panel/clients',
     icon: <PersonIcon />,
     cName: 'nav-text'
   },
