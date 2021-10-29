@@ -1,12 +1,10 @@
 import './App.css';
+import React from "react"
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-import { Doctors, Home, Login, Panel, PrivatePage } from './views';
-import Doctorss from './views/Doctor/Doctorss';
-import Clients from './views/Client/Clients';
+import { Doctor, Clients, Doctors, Home, Login, Panel, PrivatePage } from './views';
 import { Provider, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import api from './services/api';
-import Navbar from "./views/Panel"
 
 import { getMyAction, loginSuccessAction } from './store/actions/authAction';
 function App() {
@@ -37,17 +35,20 @@ function App() {
                 <Panel />
               </PrivatePage>
             </Route>
-            <Route path="/" >
+            <Route exact path="/doctors">
+              <Doctor/>
+              </Route>
+            <Route exact path="/clients">
+              <Clients />
+              </Route>
+            <Route exact path="/" >
               <Home />
             </Route>
-            <Route path="/doctorss" exact component={Doctorss} />
-            <Route path="/clients" exact component={Clients}/>
-            </Switch>
+          </Switch>
         </Router>
-        }
+      }
     </div>
   );
 };
 
 export default App;
-
