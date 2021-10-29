@@ -34,16 +34,19 @@ function App() {
               <PrivatePage>
                 <Panel />
               </PrivatePage>
+            </Route>            <Route exact path="/doctors">
+              <Doctor />
             </Route>
-            <Route exact path="/doctors">
-              <Doctor/>
-              </Route>
             <Route exact path="/clients">
               <Clients />
-              </Route>
+            </Route>
             <Route exact path="/" >
               <Home />
             </Route>
+            <Route exact path="/" >
+              <Home />
+            </Route>
+
           </Switch>
         </Router>
       }
